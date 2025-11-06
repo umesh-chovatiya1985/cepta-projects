@@ -1,6 +1,5 @@
 import { useState } from "react"
 import "./App.css"
-import Welcome from "./component/Welcome"
 import { ContextTheme } from "./context/ThemeContext"
 import Login from "./component/Login"
 import Momerised from "./component/Momerised"
@@ -16,7 +15,7 @@ function App() {
 
   return (
     <>
-      <ContextTheme.Provider value={{ theme, setTheme }}>
+      <ContextTheme.Provider value={{ theme, setTheme, count, setCount }}>
         <Login />
         <Momerised />
         <Calculate />
