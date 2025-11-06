@@ -6,7 +6,9 @@ import { ContextTheme } from "../context/ThemeContext"
 export default function Welcome(props: propsData) {
   const [count, setCount] = useState(0)
   const [value, setValue] = useState(props?.name)
-const { theme, setTheme } = useContext(ContextTheme);
+
+  const { theme, setTheme } = useContext(ContextTheme);
+
   const countEvent = () => {
     setCount(count + 1)
     setValue("Green")
@@ -23,7 +25,7 @@ const { theme, setTheme } = useContext(ContextTheme);
   return (
     <>
       <Welcome2 name={value} value={50} />      
-      <button onClick={() => setTheme(theme == "light" ? "dark" : "light")}>
+      <button onClick={() => setTheme!(theme == "light" ? "dark" : "light")}>
         {" "}
         Theme Change{" "}
       </button>

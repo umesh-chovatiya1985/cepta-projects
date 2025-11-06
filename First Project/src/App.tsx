@@ -2,6 +2,9 @@ import { useState } from "react"
 import "./App.css"
 import Welcome from "./component/Welcome"
 import { ContextTheme } from "./context/ThemeContext"
+import Login from "./component/Login"
+import Momerised from "./component/Momerised"
+import Calculate from "./component/Reducer"
 
 function App() {
   const [count, setCount] = useState("")
@@ -14,17 +17,9 @@ function App() {
   return (
     <>
       <ContextTheme.Provider value={{ theme, setTheme }}>
-        <Welcome name="react" value={20} />
-        <br />
-        <div>
-          <button onClick={() => setTheme(theme == "light" ? "dark" : "light")}>
-            {" "}
-            Theme Change{" "}
-          </button>
-          <button onClick={() => setCount("Minus")}> - </button>
-          <div>Count {count}</div>
-          <button onClick={countEvent}> + </button>
-        </div>
+        <Login />
+        <Momerised />
+        <Calculate />
       </ContextTheme.Provider>
     </>
   )
