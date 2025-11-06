@@ -8,3 +8,5 @@ Secure
 state and props
 
 Tailwind CSS - https://tailwindcss.com/
+
+Follow the step with vite  to install tailwindcss - https://tailwindcss.com/docs/installation/using-vite

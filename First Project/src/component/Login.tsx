@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 
 export default function Login() {
   const contactRef = useRef(null)
-  const [secureType, setSecureType] = useState<string | null>(null)
+  const [secureType, setSecureType] = useState("password")
   const [fields, setFields] = useState({
     contact: "",
     password: "",
@@ -28,7 +28,7 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <div className="max-w-sm">
       <h2>Welcome back!</h2>
       <div>
         <input
@@ -40,8 +40,9 @@ export default function Login() {
           placeholder="Enter Contact"
         />
       </div>
-      <div>
+      <div className="relative">
         <input
+          className="w-full"
           onChange={onChangeHandler}
           type={secureType}
           name="password"
@@ -49,6 +50,7 @@ export default function Login() {
           placeholder="Enter Password"
         />
         <button
+          className="absolute right-2 top-[7px] px-4 py-1"
           onClick={() =>
             setSecureType(secureType == "password" ? "text" : "password")
           }
@@ -57,7 +59,7 @@ export default function Login() {
         </button>
       </div>
       <div>
-        <button onClick={submitHandler}>Login Now</button>
+        <button className="px-6 py-2 rounded border-3 border-amber-900 border-dashed hover:bg-gray-900 hover:text-white" onClick={submitHandler}>Login Now</button>
       </div>
     </div>
   )
