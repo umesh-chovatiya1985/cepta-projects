@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react"
-import "./Login.css"
 
 export default function Login() {
   const contactRef = useRef(null)
