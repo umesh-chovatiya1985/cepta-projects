@@ -1,3 +1,4 @@
+-> Apply tailwind and use its class.
 Login (contact - password)
     -> Layout (secure) 
         - home
