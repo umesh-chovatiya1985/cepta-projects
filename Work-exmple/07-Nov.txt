@@ -1,0 +1,10 @@
+Login (contact - password)
+    -> Layout (secure) 
+        - home
+        - products
+            - productdetails
+    -> profile -> logout
+
+Route
+Contextapi
+Dynamic routing
