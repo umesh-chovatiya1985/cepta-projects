@@ -1,0 +1,11 @@
+https://lucide.dev/guide/installation
+npm install lucide-react
+- React icons
+
+https://ui.shadcn.com/docs/installation/vite
+shadcn - for UI component library
+- UI components
+
+
+React Form Hook
+https://react-hook-form.com/

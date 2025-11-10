@@ -7,5 +7,5 @@ Login (contact - password)
     -> profile -> logout
 
 Route
-Contextapi
+Context api
 Dynamic routing
