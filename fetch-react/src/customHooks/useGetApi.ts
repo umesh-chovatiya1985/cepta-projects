@@ -8,7 +8,17 @@ export const useGetApi = (tableName: string) => {
   const fetchData = async () => {
     try {
       setLoading(true)
-      const respo = await fetch(`${import.meta.env?.VITE_API_URL}/${tableName}`)
+      const token = localStorage.getItem("access")
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      }
+      const respo = await fetch(
+        `${import.meta.env?.VITE_API_URL}/${tableName}`,
+        {
+          headers,
+        }
+      )
       if (respo.ok) {
         const result = await respo.json()
         setRecords(result)

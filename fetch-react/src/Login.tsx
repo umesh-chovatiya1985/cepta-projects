@@ -9,9 +9,9 @@ export default function Login() {
     formState: { errors },
   } = useForm()
 
-  const savePost = async (data: any) => {
+  const loginNow = async (data: any) => {
     try {
-      const respo = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      const respo = await fetch(`${import.meta.env?.VITE_API_URL}/login`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -20,7 +20,7 @@ export default function Login() {
       })
       if (respo.ok) {
         const resJson = await respo.json()
-        console.log(resJson)
+        localStorage.setItem("access", resJson?.access)
       }
     } catch (err) {
       console.log(err)
@@ -28,53 +28,38 @@ export default function Login() {
   }
 
   const onSubmit = (data: any) => {
-    savePost(data);
+    loginNow(data);
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <TextBox type="password" secure title="User Id" name="userId" register={register} errors={errors} />
-        {/* <div>
-          <label htmlFor="userId">User Id : </label>
-          <input
-            type="text"
-            id="userId"
-            {...register("userId", { required: true, pattern: /^[0-9]+$/ })}
-            placeholder="User Id"
-          />
-          {errors?.userId && (
-            <>
-              {errors?.username?.type == "required" && <span>* required</span>}
-            </>
-          )}
-        </div> */}
         <div>
-          <label htmlFor="title">Title : </label>
+          <label htmlFor="email">Email : </label>
           <input
-            type="text"
-            id="title"
-            {...register("title", { required: true })}
-            placeholder="Post Title"
+            type="email"
+            id="email"
+            {...register("email", { required: true })}
+            placeholder="Email"
           />
-          {errors?.title && (
-            <>{errors?.title?.type == "required" && <span>* required</span>}</>
+          {errors?.email && (
+            <>{errors?.email?.type == "required" && <span>* required</span>}</>
           )}
         </div>
         <div>
-          <label htmlFor="body">Body : </label>
+          <label htmlFor="body">Password : </label>
           <input
-            type="text"
-            id="body"
-            {...register("body", { required: true })}
-            placeholder="body"
+            type="password"
+            id="password"
+            {...register("password", { required: true })}
+            placeholder="Password"
           />
-          {errors?.body && (
-            <>{errors?.body?.type == "required" && <span>* required</span>}</>
+          {errors?.password && (
+            <>{errors?.password?.type == "required" && <span>* required</span>}</>
           )}
         </div>
         <div>
-          <button>Save Now</button>
+          <button>Login Now</button>
         </div>
       </form>
     </div>

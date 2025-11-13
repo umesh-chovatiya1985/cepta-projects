@@ -5,7 +5,7 @@ import { useGetApi } from "./customHooks/useGetApi"
 import { Button, Card } from "react-bootstrap"
 
 function App() {
-  // const { records: data, loading, refetchData: fetchData } = useGetApi("albums")
+  const { records: data, loading, refetchData: fetchData } = useGetApi("backend/records/users")
 
   // const [data, setData] = useState([]);
   // const [loading, setLoading] = useState(false)
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      {/* <h2>Data fetch using api</h2>
+      {/* <h2>Data fetch using api</h2> */}
       <Login />
       <button onClick={fetchData}>Call api</button>
       {loading && <div>Wait, Api is calling..</div>}
@@ -46,9 +46,9 @@ function App() {
           ))}
           </ul>
         </div> : <div>Wait, we are fetching ..</div>}
-      </div> */}
+      </div>
 
-      <Card style={{ width: "18rem" }}>
+      {/* <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src="https://via.placeholder.com/150" />
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
@@ -81,7 +81,7 @@ function App() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
