@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react"
-import List from "./components/List"
+import { lazy, Suspense, useEffect, useState } from "react"
 import Login from "./Login"
 import { useGetApi } from "./customHooks/useGetApi"
 import { Button, Card } from "react-bootstrap"
+
+const List = lazy(() => import("./components/List"));
 
 function App() {
   const { records: data, loading, refetchData: fetchData } = useGetApi("backend/records/users")
@@ -41,7 +42,9 @@ function App() {
           <ul>
           {data.map((record: any, index: any) => (
             <li key={index}>
-              <List record={record} />
+              <Suspense fallback={<div>Loading ...</div>}>
+                <List record={record} />
+              </Suspense>
             </li>
           ))}
           </ul>

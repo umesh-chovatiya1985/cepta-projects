@@ -1,0 +1,5 @@
+Start Next Project
+
+npx create-next-app@latest [project] [options] - nextjs.dev
+
+Server side render - Next js
