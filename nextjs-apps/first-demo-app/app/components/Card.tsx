@@ -1,7 +1,6 @@
-import React from 'react'
-
 export default function Card() {
+  console.log("This is server")
   return (
-    <div>Card</div>
+    <div>This is a serverside card.</div>
   )
 }
