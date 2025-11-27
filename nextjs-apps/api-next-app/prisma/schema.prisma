@@ -20,3 +20,11 @@ model User {
   email     String   @unique
   createdAt DateTime @default(now())
 }
+
+model Product {
+  id Int @id @default(autoincrement())
+  product_name String @unique
+  pro_desc String @default("product")
+  price Int @default(100)
+  createdAt DateTime @default(now())
+}
