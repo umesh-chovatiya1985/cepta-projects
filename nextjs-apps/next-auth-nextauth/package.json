@@ -1,5 +1,5 @@
 {
-  "name": "api-next-app",
+  "name": "next-auth-nextauth",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,28 +9,18 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@prisma/client": "^5.22.0",
-    "jsonwebtoken": "^9.0.2",
-    "next": "16.0.3",
-    "next-auth": "^4.24.13",
-    "oracledb": "^6.10.0",
-    "pg": "^8.16.3",
+    "next": "16.0.5",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20",
-    "@types/oracledb": "^6.10.0",
-    "@types/pg": "^8.15.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.0.3",
-    "prisma": "^5.22.0",
+    "eslint-config-next": "16.0.5",
     "tailwindcss": "^4",
-    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
